@@ -5,4 +5,6 @@ fn main() {
     println!("value of x {}", x);
 
     // const THREE_HOURS: u32 = 60 * 60;
+
+    // let guess = "42".parse().expect("not number");
 }
