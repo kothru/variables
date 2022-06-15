@@ -18,6 +18,10 @@ fn main() {
     // Heap Datatype need clone to copy, if x steady use
     // let x = String::from("test");
     // let y = x.clone();
+
+    // pass value to function is same
+    // let y = takes_and_gives_back(y);
+
     // Stack Datatype only deep copy
     let x = 5;
     let y = x;
@@ -26,4 +30,11 @@ fn main() {
 
 fn plus_one(x: i32) -> i32 {
     x + 1
+}
+
+fn takes_and_gives_back(a_string: String) -> String {
+    // a_string comes into
+    // scope
+
+    a_string // a_string is returned and moves out to the calling function
 }
