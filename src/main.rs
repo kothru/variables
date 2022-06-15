@@ -10,10 +10,10 @@ fn main() {
     let element = a[index];
     println!("value index {} is {}", index, element);
 
-    let y = {
-        let x = 3;
-        x + 1
-    };
+    // let y = {
+    //     let x = 3;
+    //     x + 1
+    // };
 
     // Heap Datatype need clone to copy, if x steady use
     // let x = String::from("test");
@@ -43,20 +43,27 @@ fn main() {
     change(&mut s);
 
     // mutable reference cannot twice reference same time
-    let mut s = String::from("hello");
-    let r1 = &mut s;
+    // let mut s = String::from("hello");
+    // let r1 = &mut s;
     // let r2 = &mut s;
     // let r3 = &s;
     // println!("{}, {}", r1, r2);
 
     // slice string, &str is slice
-    let s = String::from("hello");
-    let len = s.len();
-    let slice = &s[0..len];
-    let slice = &s[..];
+    // let s = String::from("hello");
+    // let len = s.len();
+    // let slice = &s[0..len];
+    // let slice = &s[..];
 
     // string literal is slice
-    let my_string_literal = "hello world";
+    // let my_string_literal = "hello world";
+
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+    println!("rect1 is {:?}", rect1);
+    dbg!(&rect1);
 }
 
 fn plus_one(x: i32) -> i32 {
@@ -84,3 +91,9 @@ fn change(some_string: &mut String) {
 //     let s = String::from("hello");
 //     &s
 // }
+
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
