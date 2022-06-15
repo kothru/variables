@@ -26,6 +26,11 @@ fn main() {
     let x = 5;
     let y = x;
     println!("x = {}, y = {}", x, y);
+
+    // ampersands represent references, no ownership
+    let s1 = String::from("hello");
+    let len = calculate_length(&s1);
+    println!("The length of '{}' is {}.", s1, len);
 }
 
 fn plus_one(x: i32) -> i32 {
@@ -37,4 +42,8 @@ fn takes_and_gives_back(a_string: String) -> String {
     // scope
 
     a_string // a_string is returned and moves out to the calling function
+}
+
+fn calculate_length(s: &String) -> usize {
+    s.len()
 }
