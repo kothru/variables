@@ -48,6 +48,15 @@ fn main() {
     // let r2 = &mut s;
     // let r3 = &s;
     // println!("{}, {}", r1, r2);
+
+    // slice string, &str is slice
+    let s = String::from("hello");
+    let len = s.len();
+    let slice = &s[0..len];
+    let slice = &s[..];
+
+    // string literal is slice
+    let my_string_literal = "hello world";
 }
 
 fn plus_one(x: i32) -> i32 {
