@@ -111,4 +111,13 @@ impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
+
+    // Rectangle::square(3)
+    // same as String::from('')
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size,
+        }
+    }
 }
