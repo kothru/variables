@@ -64,6 +64,14 @@ fn main() {
     };
     println!("rect1 is {:?}", rect1);
     dbg!(&rect1);
+
+    // method: メソッド、最初のパラメータは常に&self
+    // function: 関数
+
+    // automatic referencing and dereferencing
+    // same ref cause rust auto detect ownership
+    // p1.distance(&p2);
+    // (&p1).distance(&p2);
 }
 
 fn plus_one(x: i32) -> i32 {
@@ -96,4 +104,11 @@ fn change(some_string: &mut String) {
 struct Rectangle {
     width: u32,
     height: u32,
+}
+
+impl Rectangle {
+    // alias of self: &Self (rectangle: &Rectangle)
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
 }
