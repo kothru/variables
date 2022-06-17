@@ -75,6 +75,14 @@ fn main() {
 
     let home = IpAddr::V4(String::from("127.0.0.1"));
     let loopback = IpAddr::V6(String::from("::1"));
+
+    // Rust dont have null
+    // use Option<T>
+
+    let config_max = Some(3u8);
+    if let Some(max) = config_max {
+        println!("The maximum is configured to be {}", max);
+    }
 }
 
 fn plus_one(x: i32) -> i32 {
