@@ -83,6 +83,20 @@ fn main() {
     if let Some(max) = config_max {
         println!("The maximum is configured to be {}", max);
     }
+
+    // rust default private
+    // abs
+    crate::a::b::c();
+    // rel
+    a::b::c();
+}
+
+mod a {
+    pub mod b {
+        pub fn c() {
+            println!("dangle");
+        }
+    }
 }
 
 fn plus_one(x: i32) -> i32 {
