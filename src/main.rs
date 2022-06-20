@@ -98,6 +98,10 @@ fn main() {
     use std::collections::HashMap;
     let mut map = HashMap::new();
     map.insert(1, 2);
+
+    // as alias
+    use std::fmt::Result;
+    use std::io::Result as IoResult;
 }
 
 mod a {
