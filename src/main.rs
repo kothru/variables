@@ -105,6 +105,10 @@ fn main() {
 
     // pub use is re-exposing
     // pub use front_of_house;
+
+    // cargo.toml external packages auto use
+    use rand::Rng;
+    // or std also external
 }
 
 mod a {
