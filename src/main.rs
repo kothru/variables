@@ -1,4 +1,8 @@
-use std::io;
+// nested self
+// use std::io::{self, Write};
+// glob
+// use std::collections::*;
+use std::{cmp::Ordering, io};
 
 fn main() {
     let a = [1, 2, 3, 4, 5];
