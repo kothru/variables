@@ -10,4 +10,13 @@ pub fn eat_at_restaurant() {
         Some(third) => println!("some {}", third),
         None => println!("none"),
     }
+    let mut v = vec![100, 32, 57];
+    // ref loop
+    for i in &v {
+        println!("i {}", i)
+    }
+    // mut loop
+    for i in &mut v {
+        *i += 50;
+    }
 }
