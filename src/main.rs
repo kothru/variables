@@ -89,6 +89,15 @@ fn main() {
     crate::a::b::c();
     // rel
     a::b::c();
+
+    // function idiomatic use parent module
+    use a::b;
+    b::c();
+
+    // Structs or enums use use full path
+    use std::collections::HashMap;
+    let mut map = HashMap::new();
+    map.insert(1, 2);
 }
 
 mod a {
