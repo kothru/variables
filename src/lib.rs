@@ -1,4 +1,6 @@
 mod front_of_house;
+use std::hash::Hash;
+
 pub use crate::front_of_house::hosting;
 pub fn eat_at_restaurant() {
     hosting::add_to_waitlist();
@@ -28,4 +30,12 @@ pub fn eat_at_restaurant() {
     // push char
     let mut s = String::from("lo");
     s.push('l');
+
+    use std::collections::HashMap;
+    let mut score: HashMap<String, i32> = HashMap::new();
+    score.insert(String::from("test"), 1);
+    let scoreval = score.get(&String::from("test"));
+    println!("{:?}", score);
+
+    let val = score.entry(String::from("test2")).or_insert(10);
 }
