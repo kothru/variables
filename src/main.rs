@@ -102,6 +102,9 @@ fn main() {
     // as alias
     use std::fmt::Result;
     use std::io::Result as IoResult;
+
+    // pub use is re-exposing
+    // pub use front_of_house;
 }
 
 mod a {
