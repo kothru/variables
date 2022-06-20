@@ -19,4 +19,13 @@ pub fn eat_at_restaurant() {
     for i in &mut v {
         *i += 50;
     }
+
+    let mut s1 = String::from("foo");
+    let s2 = "bar";
+    // push str
+    s1.push_str(s2);
+    println!("s2 is {}", s2);
+    // push char
+    let mut s = String::from("lo");
+    s.push('l');
 }
