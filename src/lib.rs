@@ -38,4 +38,12 @@ pub fn eat_at_restaurant() {
     println!("{:?}", score);
 
     let val = score.entry(String::from("test2")).or_insert(10);
+
+    // Result<T, E>
+
+    // panic!
+    // unwind stack
+
+    // panic = 'abort'
+    // skip unwind stack, immediately abort (os release stack)
 }

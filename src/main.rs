@@ -5,6 +5,8 @@
 use std::{cmp::Ordering, io};
 
 fn main() {
+    // panic!("clash");
+
     let a = [1, 2, 3, 4, 5];
     println!("input");
     let mut index = String::new();
