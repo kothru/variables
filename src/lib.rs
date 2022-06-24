@@ -46,4 +46,17 @@ pub fn eat_at_restaurant() {
 
     // panic = 'abort'
     // skip unwind stack, immediately abort (os release stack)
+
+    // rust detect buffer overread
+
+    // default
+    // RUST_BACKTRACE=0 cargo run
+    // trace(VSCode Run command?)
+    // RUST_BACKTRACE=1 cargo run
+    // detail
+    // RUST_BACKTRACE=full cargo run
+
+    // Debug symbol enable default
+    // off debug symbol
+    // cargo (build|run) --release
 }
