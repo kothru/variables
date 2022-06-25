@@ -1,5 +1,5 @@
 mod front_of_house;
-use std::hash::Hash;
+use std::{fs::File, hash::Hash};
 
 pub use crate::front_of_house::hosting;
 pub fn eat_at_restaurant() {
@@ -59,4 +59,11 @@ pub fn eat_at_restaurant() {
     // Debug symbol enable default
     // off debug symbol
     // cargo (build|run) --release
+
+    let f = File::open("hello.txt");
+
+    let f = match f {
+        Ok(file) => file,
+        Err(error) => panic!("Problem opening the file: {:?}", error),
+    };
 }
