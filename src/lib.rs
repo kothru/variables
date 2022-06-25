@@ -1,5 +1,5 @@
 mod front_of_house;
-use std::{fs::File, hash::Hash};
+use std::{fs::File, hash::Hash, io::ErrorKind};
 
 pub use crate::front_of_house::hosting;
 pub fn eat_at_restaurant() {
@@ -64,6 +64,15 @@ pub fn eat_at_restaurant() {
 
     let f = match f {
         Ok(file) => file,
-        Err(error) => panic!("Problem opening the file: {:?}", error),
+        // or alter unwrap_or_else and closure
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create("hello.txt") {
+                Ok(fc) => fc,
+                Err(e) => panic!("Problem creating the file: {:?}", e),
+            },
+            other_error => {
+                panic!("Problem opening the file: {:?}", other_error)
+            }
+        },
     };
 }
