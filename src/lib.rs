@@ -1,5 +1,9 @@
 mod front_of_house;
-use std::{fs::File, hash::Hash, io::ErrorKind};
+use std::{
+    fs::{self, File},
+    hash::Hash,
+    io::{self, ErrorKind, Read},
+};
 
 pub use crate::front_of_house::hosting;
 pub fn eat_at_restaurant() {
@@ -80,4 +84,19 @@ pub fn eat_at_restaurant() {
     let f = File::open("hello.txt").unwrap();
     // expect change panic! message
     let f = File::open("hello.txt").expect("Failed to open hello.txt");
+}
+
+fn read_username_from_file() -> Result<String, io::Error> {
+    // ? operator is ReturnedError if error
+    // let mut f = File::open("hello.txt")?;
+    // let mut s = String::new();
+    // f.read_to_string(&mut s)?;
+
+    // let mut s = String::new();
+    // ? can chain
+    // File::open("hello.txt")?.read_to_string(&mut s)?;
+    // Ok(s)
+
+    // std shorthand
+    fs::read_to_string("hello.txt")
 }
