@@ -75,4 +75,9 @@ pub fn eat_at_restaurant() {
             }
         },
     };
+    // if Ok, return File
+    // if Err, panic! good message
+    let f = File::open("hello.txt").unwrap();
+    // expect change panic! message
+    let f = File::open("hello.txt").expect("Failed to open hello.txt");
 }
