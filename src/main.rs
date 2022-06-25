@@ -117,6 +117,14 @@ fn main() {
     // or std also external
 }
 
+// main return special (), return 0
+// Box<dyn Error> means any kind of error, return over 0
+// fn main() -> Result<(), Box<dyn Error>> {
+//     let f = File::open("hello.txt")?;
+
+//     Ok(())
+// }
+
 mod a {
     pub mod b {
         pub fn c() {
