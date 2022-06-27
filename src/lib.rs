@@ -84,6 +84,10 @@ pub fn eat_at_restaurant() {
     let f = File::open("hello.txt").unwrap();
     // expect change panic! message
     let f = File::open("hello.txt").expect("Failed to open hello.txt");
+
+    // panic! use invalid value
+    // like impl type domain get invalid value
+    // almost use Result
 }
 
 fn read_username_from_file() -> Result<String, io::Error> {
