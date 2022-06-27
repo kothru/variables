@@ -1,5 +1,6 @@
 mod front_of_house;
 use std::{
+    fmt::Display,
     fs::{self, File},
     hash::Hash,
     io::{self, ErrorKind, Read},
@@ -125,4 +126,13 @@ fn read_username_from_file() -> Result<String, io::Error> {
 
     // std shorthand
     fs::read_to_string("hello.txt")
+}
+
+// use where clause
+fn some_function<T, U>(t: &T, u: &U) -> i32
+where
+    T: Display + Clone,
+    U: Clone,
+{
+    1
 }
