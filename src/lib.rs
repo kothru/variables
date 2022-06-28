@@ -90,28 +90,30 @@ pub fn eat_at_restaurant() {
     // like impl type domain get invalid value
     // almost use Result
 
-    // let number_list = vec![34, 50, 25, 100, 65];
+    let number_list = vec![34, 50, 25, 100, 65];
 
-    // let result = largest(&number_list);
-    // println!("The largest number is {}", result);
+    let result = largest(&number_list);
+    println!("The largest number is {}", result);
 
-    // let char_list = vec!['y', 'm', 'a', 'q'];
+    let char_list = vec!['y', 'm', 'a', 'q'];
 
-    // let result = largest(&char_list);
-    // println!("The largest char is {}", result);
+    let result = largest(&char_list);
+    println!("The largest char is {}", result);
 }
 
-// fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> T {
-//     let mut largest = list[0];
+// i32 and char has Copy trait cause using stack
+// if use copy in generics, describe copy trait
+fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
+    let mut largest = list[0];
 
-//     for &item in list {
-//         if item > largest {
-//             largest = item;
-//         }
-//     }
+    for &item in list {
+        if item > largest {
+            largest = item;
+        }
+    }
 
-//     largest
-// }
+    largest
+}
 
 fn read_username_from_file() -> Result<String, io::Error> {
     // ? operator is ReturnedError if error
