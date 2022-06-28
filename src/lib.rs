@@ -190,3 +190,9 @@ fn returns_summarizable() -> impl Summary {
 //         }
 //     }
 // }
+
+// blanket impl
+// eg. in std, specific generics(Display) impl ToString(.to_string()) trait
+// impl<T: Display> ToString for T {
+//     // --snip--
+// }
